@@ -141,11 +141,11 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias cat='bat -n --paging=never'
-alias pnx='pnpm nx'
+#alias cat='bat -n --paging=never'
+#alias pnx='pnpm nx'
 #alias sed='gsed'
-alias vim='/opt/homebrew/bin/nvim'
-alias gpgreset='gpg-connect-agent killagent /bye; gpg-connect-agent updatestartuptty /bye; gpg-connect-agent /bye'
+#alias vim='/opt/homebrew/bin/nvim'
+#alias gpgreset='gpg-connect-agent killagent /bye; gpg-connect-agent updatestartuptty /bye; gpg-connect-agent /bye'
 
 _evalcache /opt/homebrew/bin/brew shellenv
 
@@ -154,12 +154,13 @@ _evalcache /opt/homebrew/bin/brew shellenv
 
 #gpgconf --launch gpg-agent
 
-_evalcache zoxide init --cmd cd zsh
-_evalcache pyenv init -
-_evalcache starship init zsh
+#_evalcache zoxide init --cmd cd zsh
+#_evalcache pyenv init -
+#_evalcache starship init zsh
 
-## [Completion]
-## Completion scripts setup. Remove the following line to uninstall
-[[ -f /Users/edlundin/.dart-cli-completion/zsh-config.zsh ]] && . /Users/edlundin/.dart-cli-completion/zsh-config.zsh || true
-## [/Completion]
+
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/edlundin/.lmstudio/bin"
+# End of LM Studio CLI section
 
