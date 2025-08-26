@@ -72,7 +72,7 @@ setopt INC_APPEND_HISTORY
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 export NVM_LAZY_LOAD=true
-export NVM_COMPLETION=true
+export NVM_COMPLETION=false
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -96,26 +96,13 @@ source $ZSH/oh-my-zsh.sh
 autoload -U +X bashcompinit && bashcompinit
 autoload -U +X compinit && compinit
 
-# Add completions for pipx
-_evalcache register-python-argcomplete pipx
-
-# Add completions for ansible
-_evalcache register-python-argcomplete ansible
-_evalcache register-python-argcomplete ansible-config
-_evalcache register-python-argcomplete ansible-console
-_evalcache register-python-argcomplete ansible-doc
-_evalcache register-python-argcomplete ansible-galaxy
-_evalcache register-python-argcomplete ansible-inventory
-_evalcache register-python-argcomplete ansible-playbook
-_evalcache register-python-argcomplete ansible-pull
-_evalcache register-python-argcomplete ansible-vault
-
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # Completion and fzf-tab style 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # User configuration
@@ -142,25 +129,23 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 #alias cat='bat -n --paging=never'
-#alias pnx='pnpm nx'
-#alias sed='gsed'
-#alias vim='/opt/homebrew/bin/nvim'
-#alias gpgreset='gpg-connect-agent killagent /bye; gpg-connect-agent updatestartuptty /bye; gpg-connect-agent /bye'
+alias cd='z'
+alias dig='doggo'
+alias gpgreset='gpg-connect-agent killagent /bye; gpg-connect-agent updatestartuptty /bye; gpg-connect-agent /bye'
+alias grep="rg"
+alias l='eza -la'
+alias pnx='pnpm nx'
+alias bnx='bunx nx'
+alias ps='procs'
+alias vim='nvim'
 
-_evalcache /opt/homebrew/bin/brew shellenv
-
-#export GPG_TTY="$(tty)"
-#export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-
-#gpgconf --launch gpg-agent
-
-#_evalcache zoxide init --cmd cd zsh
-#_evalcache pyenv init -
-#_evalcache starship init zsh
+_evalcache starship init zsh
+#_evalcache /opt/homebrew/bin/brew shellenv
+_evalcache zoxide init zsh
+_evalcache atuin init zsh
+export CARAPACE_BRIDGES='zsh' # optional
+source <(carapace _carapace)
 
 
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/edlundin/.lmstudio/bin"
-# End of LM Studio CLI section
-
+# Added by Windsurf
+export PATH="/Users/edlundin/.codeium/windsurf/bin:$PATH"

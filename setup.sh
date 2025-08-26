@@ -6,7 +6,7 @@ brew upgrade --greedy
 
 echo "Installing dependencies..."
 brew tap rsteube/homebrew-tap 
-brew install localsend fd exa bat zsh neovim wget curl git gnupg2 stow feh starship aerospace rsteube/tap/carapace zellij nushell
+brew install localsend fd exa bat zsh neovim wget curl git gnupg2 stow feh starship aerospace atuin rsteube/tap/carapace zellij nushell
 brew tap homebrew/cask-fonts
 brew install font-monaspace-nerd-font --cask
 

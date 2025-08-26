@@ -1,0 +1,7 @@
+{
+  "autoupdate:channel": "latest",
+  "conn:askbeforewshinstall": false,
+  "telemetry:enabled": false,
+  "term:fontfamily": "MonaspiceAr Nerd Font Mono",
+  "term:fontsize": 11.5
+}
