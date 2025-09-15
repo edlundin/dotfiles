@@ -134,6 +134,7 @@ alias dig='doggo'
 alias gpgreset='gpg-connect-agent killagent /bye; gpg-connect-agent updatestartuptty /bye; gpg-connect-agent /bye'
 alias grep="rg"
 alias l='eza -la'
+alias ls='eza'
 alias pnx='pnpm nx'
 alias bnx='bunx nx'
 alias ps='procs'
