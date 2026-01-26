@@ -139,14 +139,14 @@ alias pnx='pnpm nx'
 alias bnx='bunx nx'
 alias ps='procs'
 alias vim='nvim'
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
-_evalcache starship init zsh
+eval "$(starship init zsh)"
 #_evalcache /opt/homebrew/bin/brew shellenv
 _evalcache zoxide init zsh
 _evalcache atuin init zsh
 export CARAPACE_BRIDGES='zsh' # optional
 source <(carapace _carapace)
 
-
-# Added by Windsurf
-export PATH="/Users/edlundin/.codeium/windsurf/bin:$PATH"
+# Added by Antigravity
+export PATH="/Users/edlundin/.antigravity/antigravity/bin:$PATH"

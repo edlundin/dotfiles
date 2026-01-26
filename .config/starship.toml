@@ -1,9 +1,9 @@
 # ~/.config/starship.toml
 
 add_newline = true
-command_timeout = 10000
+command_timeout = 3600
 format = """
-$os$username$hostname$kubernetes$directory$git_branch$git_status
+$os$shell$username$hostname$kubernetes$directory$git_branch$git_status
 $character
 """
 
@@ -77,7 +77,7 @@ deleted = '[󰍶 deleted=${count}](red) '
 # Shows kubernetes context and namespace
 [kubernetes]
 format = 'via [󱃾 $context\($namespace\)](bold purple) '
-disabled = false
+disabled = true
 
 # ---
 
@@ -101,3 +101,6 @@ disabled = true
 
 [terraform]
 disabled = true
+
+[shell]
+disabled = false

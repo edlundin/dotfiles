@@ -3,9 +3,10 @@
 #theme = nord-wave
 #theme = catppuccin-mocha.conf
 #theme = Cyberdyne
-theme = Github Dark
+#theme = Github Dark
+theme = Cursor Dark
 
-minimum-contrast = 1.1
+#minimum-contrast = 0.5
 
 cursor-opacity = 0.5
 cursor-style = "block"
@@ -29,3 +30,6 @@ window-inherit-font-size = false
 shell-integration = none
 macos-secure-input-indication = false
 keybind = global:cmd+grave_accent=toggle_quick_terminal
+
+# Macos
+macos-icon = xray
