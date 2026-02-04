@@ -3,9 +3,10 @@
 add_newline = true
 command_timeout = 3600
 format = """
-$os$shell$username$hostname$kubernetes$directory$git_branch$git_status
+$os$shell$username$hostname$kubernetes$directory$git_branch$git_status$fill$time
 $character
 """
+continuation_prompt = """$character$character"""
 
 # Drop ugly default prompt characters
 [character]
@@ -104,3 +105,9 @@ disabled = true
 
 [shell]
 disabled = false
+
+[time]
+disabled = false
+
+[fill]
+symbol = '-'

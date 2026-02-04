@@ -12,7 +12,7 @@ cursor-opacity = 0.5
 cursor-style = "block"
 cursor-style-blink = false
 
-#command = /opt/homebrew/bin/nu -i
+command = /opt/homebrew/bin/nu -i
 
 mouse-hide-while-typing = true
 macos-titlebar-style = tabs
