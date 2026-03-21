@@ -65,9 +65,9 @@ $env.config = {
 
 # Aliases
 alias cat = bat -n --paging=never
-alias cd = z
 alias dig = doggo
 alias grep = rg
+alias l = ls -al
 #alias l = eza -la
 #alias ls = eza
 alias pnx = pnpm nx
@@ -86,5 +86,5 @@ def gpgreset [] {
 # Load integrations (files were generated in env.nu)
 source ~/.cache/starship/init.nu
 source ~/.zoxide.nu
-try { source ~/.atuin.nu }
 source ~/.cache/carapace/init.nu
+use ($nu.default-config-dir | path join mise.nu)

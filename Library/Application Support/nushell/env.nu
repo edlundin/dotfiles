@@ -35,7 +35,6 @@ $env.KUBECONFIG = $"($env.HOME)/.kube/k3s-config"
 $env.ANDROID_HOME = "/opt/homebrew/share/android-commandlinetools"
 $env.JAVA_HOME = (^/usr/libexec/java_home -v 21 | str trim)
 $env.PNPM_HOME = $"($env.HOME)/Library/pnpm"
-$env.VOLTA_HOME = $"($env.HOME)/.volta"
 
 # PATH configuration
 $env.PATH = (
@@ -45,7 +44,6 @@ $env.PATH = (
         "/opt/homebrew/bin"
         "/opt/homebrew/opt/gnu-sed/libexec/gnubin"
         $env.PNPM_HOME
-        $"($env.VOLTA_HOME)/bin"
         $"($env.HOME)/bin"
         $"($env.ANDROID_HOME)/build-tools/37.0.0"
         $"($env.ANDROID_HOME)/platform-tools"
@@ -90,15 +88,7 @@ if not ($starship_cache | path exists) {
 # Zoxide
 let zoxide_cache = ($env.HOME | path join '.zoxide.nu')
 if not ($zoxide_cache | path exists) {
-    zoxide init nushell | save -f $zoxide_cache
-}
-
-# Atuin (optional)
-let atuin_cache = ($env.HOME | path join '.atuin.nu')
-if not ($atuin_cache | path exists) {
-    try {
-        atuin init nu | save -f $atuin_cache
-    }
+    zoxide init nushell --cmd=cd | save -f $zoxide_cache
 }
 
 # Carapace
@@ -110,3 +100,7 @@ if not ($carapace_dir | path exists) {
 if not ($carapace_cache | path exists) {
     carapace _carapace nushell | save --force $carapace_cache
 }
+
+# Mise
+let mise_path = $nu.default-config-dir | path join mise.nu
+^mise activate nu | save $mise_path --force
