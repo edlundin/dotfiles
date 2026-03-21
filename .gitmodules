@@ -1,0 +1,9 @@
+[submodule ".nu_scripts"]
+	path = .nu_scripts
+	url = git@github.com:nushell/nu_scripts
+[submodule ".ghostty/shaders/hackr-sh"]
+	path = .ghostty/shaders/hackr-sh
+	url = https://github.com/hackr-sh/ghostty-shaders
+[submodule ".ghostty/shaders/luiscarlospando"]
+	path = .ghostty/shaders/luiscarlospando
+	url = https://github.com/luiscarlospando/crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix.git
