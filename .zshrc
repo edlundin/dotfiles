@@ -1,6 +1,5 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -38,7 +37,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -52,7 +51,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -71,30 +70,25 @@ setopt INC_APPEND_HISTORY
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-export NVM_LAZY_LOAD=true
-export NVM_COMPLETION=false
-
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+fpath+=("${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src")
 plugins=(
-  zsh-nvm
   git
   fzf-tab
   zsh-autosuggestions
-  zsh-fzf-history-search
   zsh-syntax-highlighting
   you-should-use
   evalcache
 )
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src # For zsh-completions
-
 source $ZSH/oh-my-zsh.sh
 
-autoload -U +X bashcompinit && bashcompinit
-autoload -U +X compinit && compinit
+# Already run by oh-my-zsh
+#autoload -U +X bashcompinit && bashcompinit
+#autoload -U +X compinit && compinit
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -141,12 +135,11 @@ alias ps='procs'
 alias vim='nvim'
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
-eval "$(starship init zsh)"
-#_evalcache /opt/homebrew/bin/brew shellenv
+_evalcache starship init zsh
+_evalcache /opt/homebrew/bin/brew shellenv
 _evalcache zoxide init zsh
 _evalcache atuin init zsh
-export CARAPACE_BRIDGES='zsh' # optional
-source <(carapace _carapace)
+_evalcache mise activate zsh
 
-# Added by Antigravity
-export PATH="/Users/edlundin/.antigravity/antigravity/bin:$PATH"
+export CARAPACE_BRIDGES='zsh' # optional
+_evalcache carapace _carapace

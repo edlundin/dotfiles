@@ -26,6 +26,7 @@ $env.config = {
         max_size: 1000000
         sync_on_enter: true
         file_format: "sqlite"
+        isolation: true
     }
     
     completions: {
@@ -75,6 +76,8 @@ alias bnx = bunx nx
 alias ps = procs
 alias vim = nvim
 alias tailscale = /Applications/Tailscale.app/Contents/MacOS/Tailscale
+alias pp = pi -e ~/work/e/edvpi 
+#alias source = overlay use
 
 # GPG reset function
 def gpgreset [] {
@@ -88,3 +91,6 @@ source ~/.cache/starship/init.nu
 source ~/.zoxide.nu
 source ~/.cache/carapace/init.nu
 use ($nu.default-config-dir | path join mise.nu)
+
+overlay use '/Users/edlundin/work/e/dotfiles/Library/Application Support/nushell/plugins/git-aliases/git-aliases.nu'
+overlay use '/Users/edlundin/work/e/dotfiles/Library/Application Support/nushell/plugins/alias-finder/alias-finder.nu'

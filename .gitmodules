@@ -7,3 +7,9 @@
 [submodule ".ghostty/shaders/luiscarlospando"]
 	path = .ghostty/shaders/luiscarlospando
 	url = https://github.com/luiscarlospando/crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix.git
+[submodule "Library/Application Support/nushell/plugins/alias-finder"]
+	path = Library/Application Support/nushell/plugins/alias-finder
+	url = git@github.com:KamilKleina/alias-finder.nu.git
+[submodule "Library/Application Support/nushell/plugins/git-aliases"]
+	path = Library/Application Support/nushell/plugins/git-aliases
+	url = git@github.com:KamilKleina/git-aliases.nu.git

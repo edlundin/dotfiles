@@ -53,7 +53,6 @@ $env.PATH = (
         $"($env.HOME)/go/bin"
         $"($env.HOME)/.local/bin"
         $"($env.HOME)/.cargo/bin"
-        $"($env.HOME)/.antigravity/antigravity/bin"
     ]
 )
 
