@@ -15,8 +15,8 @@ after-startup-command = []
 start-at-login = true
 
 #[focus]
-#boundaries = 'all-monitors-union'
-#when-boundaries-are-exceeded = 'wrap-around-all-monitors-union'
+boundaries = 'all-monitors-union'
+when-boundaries-are-exceeded = 'wrap-around-all-monitors-union'
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -169,41 +169,9 @@ alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
 [[on-window-detected]]
-if.app-id = 'dev.warp.Warp-Stable'
-run = 'move-node-to-workspace T'
-
-[[on-window-detected]]
-if.app-id = 'com.jetbrains.goland'
-run = 'move-node-to-workspace DEV'
-
-[[on-window-detected]]
-if.app-id = 'company.thebrowser.Browser'
-run = 'move-node-to-workspace WEBBR'
-
-[[on-window-detected]]
-if.app-id = 'com.bitwarden.desktop'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'com.microsoft.VSCode'
-run = 'move-node-to-workspace DEV'
-
-[[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap' # Slack
 run = 'move-node-to-workspace C'
 
 [[on-window-detected]]
 if.app-id = 'com.hnc.Discord'
 run = 'move-node-to-workspace C'
-
-[[on-window-detected]]
-if.app-id = 'com.jetbrains.WebStorm'
-run = 'move-node-to-workspace DEV'
-
-[[on-window-detected]]
-if.app-id = 'com.macpaw.CleanMyMac-setapp'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'org.mozilla.com.zen.browser'
-run = 'move-node-to-workspace WEBBR'

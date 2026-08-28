@@ -1,12 +1,8 @@
-[includeIf "gitdir:~/work/a/**"]
-    path = ~/work/a/.gitconfig
-[includeIf "gitdir:~/work/e/**"]
-    path = ~/work/e/.gitconfig
 [init]
 	defaultBranch = master
 [gitbutler]
 	signCommits = true
-	aiModelProvider = anthropic
+	aiModelProvider = openai
 [core]
 	fsmonitor = false
     pager = delta
@@ -22,3 +18,17 @@
     colorMoved = default
 [alias]
 	pfwl = push --force-with-lease
+[user]
+	name = Edvard LUNDIN
+	email = edvard.lundin@pm.me
+  signingKey = ~/.ssh/edlundin_sk.pub
+[commit]
+	gpgsign = true
+[tag]
+  gpgsign = true
+[gpg]
+	format = ssh
+[includeIf "gitdir:~/work/a/**"]
+    path = ~/work/a/.gitconfig
+[includeIf "gitdir:~/work/e/**"]
+    path = ~/work/e/.gitconfig

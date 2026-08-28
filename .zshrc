@@ -122,7 +122,7 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#alias cat='bat -n --paging=never'
+alias cat='bat -n --paging=never'
 alias cd='z'
 alias dig='doggo'
 alias gpgreset='gpg-connect-agent killagent /bye; gpg-connect-agent updatestartuptty /bye; gpg-connect-agent /bye'

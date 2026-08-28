@@ -86,10 +86,22 @@ def gpgreset [] {
     gpg-connect-agent /bye
 }
 
+def --env source-dotenv [path: path] {
+  open $path
+  | lines
+  | where {|line| ($line | str trim) != "" and not (($line | str trim) | str starts-with "#") }
+  | parse "{key}={value}"
+  | update key {|row| $row.key | str trim }
+  | update value {|row| $row.value | str trim | str trim --char '"' | str trim --char "'" }
+  | transpose --header-row --as-record
+  | load-env
+}
+
 # Load integrations (files were generated in env.nu)
 source ~/.cache/starship/init.nu
 source ~/.zoxide.nu
 source ~/.cache/carapace/init.nu
+source "~/.cargo/env.nu"
 use ($nu.default-config-dir | path join mise.nu)
 
 overlay use '/Users/edlundin/work/e/dotfiles/Library/Application Support/nushell/plugins/git-aliases/git-aliases.nu'

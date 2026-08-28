@@ -1,0 +1,55 @@
+# Use with `codex --profile portable`; copy to config.toml if a client cannot pass a profile.
+model = "gpt-5.6-luna"
+model_reasoning_effort = "low"
+personality = "pragmatic"
+
+[features]
+multi_agent = true
+default_mode_request_user_input = true
+js_repl = false
+plugin_hooks = true
+hooks = true
+
+[desktop]
+followUpQueueMode = "queue"
+dock-icon-preference = "codex-system"
+conversationDetailMode = "STEPS_PROSE"
+keepRemoteControlAwakeWhilePluggedIn = true
+selected-avatar-id = "null-signal"
+
+[marketplaces.context-mode]
+source_type = "git"
+source = "https://github.com/mksglu/context-mode.git"
+
+[plugins."visualize@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[plugins."sites@openai-bundled"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."context-mode@context-mode"]
+enabled = true
+
+[plugins."codex-app-tools@openai-bundled"]
+enabled = true

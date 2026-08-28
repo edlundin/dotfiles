@@ -1,0 +1,104 @@
+# ~/.config/neru/config.toml
+
+[hotkeys]
+# Hyper = Cmd+Ctrl+Alt+Shift, assuming your Caps Lock is mapped to that elsewhere.
+# Recommended launchers:
+"Cmd+Ctrl+Alt+Shift+Space" = "hints"
+"Cmd+Ctrl+Alt+Shift+G" = "grid --cursor-selection-mode hold"
+"Cmd+Ctrl+Alt+Shift+C" = "recursive_grid --cursor-selection-mode hold"
+"Cmd+Ctrl+Alt+Shift+S" = "scroll"
+
+# Optional direct mouse nudge mode without entering grid.
+"Cmd+Ctrl+Alt+Shift+H" = "action move_mouse_relative --dx -40 --dy 0"
+"Cmd+Ctrl+Alt+Shift+J" = "action move_mouse_relative --dx 0 --dy 40"
+"Cmd+Ctrl+Alt+Shift+K" = "action move_mouse_relative --dx 0 --dy -40"
+"Cmd+Ctrl+Alt+Shift+L" = "action move_mouse_relative --dx 40 --dy 0"
+
+# Click at current cursor position.
+"Cmd+Ctrl+Alt+Shift+Return" = "action left_click --bare"
+"Cmd+Ctrl+Alt+Shift+R" = "action right_click --bare"
+
+[hints.hotkeys]
+"Escape" = "idle"
+"Backspace" = "action backspace"
+
+# Click selected hint.
+"Return" = ["action left_click", "idle"]
+"Shift+L" = ["action left_click", "idle"]
+"Shift+R" = ["action right_click", "idle"]
+
+# Keep hints open after click, useful for repeated clicking.
+"Cmd+Return" = ["action left_click", "action sleep 0.15", "hints"]
+
+# Cycle hints without typing labels.
+"Tab" = "action cycle_hint"
+"Shift+Tab" = "action cycle_hint --backward"
+
+[grid.hotkeys]
+"Escape" = "idle"
+
+# Move real cursor to selected grid point, then exit.
+"Return" = ["action move_mouse", "idle"]
+
+# Click selected grid point, then exit.
+"Shift+L" = ["action left_click", "idle"]
+"Shift+R" = ["action right_click", "idle"]
+
+# Text selection / dragging:
+# 1. Move to selection start.
+# 2. Press D to hold mouse down.
+# 3. Move to selection end.
+# 4. Press U to release.
+"D" = "action mouse_down"
+"U" = ["action mouse_up", "idle"]
+
+[recursive_grid.hotkeys]
+"Escape" = "idle"
+
+# Move cursor precisely, then exit.
+"Return" = ["action move_mouse", "idle"]
+
+# Click at selected recursive-grid point.
+"Shift+L" = ["action left_click", "idle"]
+"Shift+R" = ["action right_click", "idle"]
+
+# Text selection / dragging.
+"D" = "action mouse_down"
+"U" = ["action mouse_up", "idle"]
+
+[scroll.hotkeys]
+"Escape" = "idle"
+"j" = "action scroll_down"
+"k" = "action scroll_up"
+"h" = "action scroll_left"
+"l" = "action scroll_right"
+"d" = "action page_down"
+"u" = "action page_up"
+"gg" = "action go_top"
+"Shift+G" = "action go_bottom"
+
+[virtual_pointer]
+enabled = true
+
+[virtual_pointer.ui]
+size = 4
+
+[sticky_modifiers]
+enabled = true
+tap_max_duration = 300
+
+[mouse_action_indicator]
+enabled = true
+actions = [
+  "left_click",
+  "right_click",
+  "middle_click",
+  "mouse_down",
+  "mouse_up"
+]
+
+[smooth_cursor]
+move_mouse_enabled = true
+steps = 10
+max_duration = 120
+duration_per_pixel = 0.08

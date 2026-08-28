@@ -1,0 +1,13 @@
+[bindings]
+window_focus_west = "cmd - h"
+window_focus_east = "cmd - l"
+window_swap_west = "cmd + shift - h"
+window_swap_east = "cmd + shift - l"
+window_resize = "alt - r"
+window_center = "alt - c"
+window_fullwidth = "alt - f"
+window_manage = "alt - space"
+quit = "ctrl + alt - q"
+
+[swipe.scroll]
+modifier = "alt"

@@ -87,7 +87,7 @@ let remote = (do --ignore-errors { git ls-remote --get-url } | str trim)
 
 if ($remote | str contains "github") {
     print "  "
-} else if ($remote | str contains "gitlab") {
+} else if (($remote | str contains "gitlab") or ($remote | str contains "git.alyseo.com")) {
     print "  "
 } else if ($remote | str contains "bitbucket") {
     print "  "
@@ -418,3 +418,9 @@ sky = "#7E9CD8"
 sapphire = "#D27E99" # dir fg
 blue = "#7E9CD8"
 lavender = "#E6C384"   # git branch fg
+
+[kubernetes]
+disabled = false
+symbol = "☸ "
+format = "[ $symbol$context( $namespace) ]($style)"
+style = "mauve"

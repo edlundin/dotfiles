@@ -23,6 +23,7 @@
 # Environment variables
 $env.HOMEBREW_PREFIX = "/opt/homebrew"
 $env.HOMEBREW_NO_ENV_HINTS = "1"
+$env.SSH_AUTH_SOCK = ($env.HOME | path join ".ssh" "homebrew-agent.sock")
 
 $env.VISUAL = "nvim"
 $env.EDITOR = "nvim"
@@ -35,6 +36,7 @@ $env.KUBECONFIG = $"($env.HOME)/.kube/k3s-config"
 $env.ANDROID_HOME = "/opt/homebrew/share/android-commandlinetools"
 $env.JAVA_HOME = (^/usr/libexec/java_home -v 21 | str trim)
 $env.PNPM_HOME = $"($env.HOME)/Library/pnpm"
+$env.HOMEBREW_NO_AUTO_UPDATE = "1"
 
 # PATH configuration
 $env.PATH = (
@@ -42,13 +44,14 @@ $env.PATH = (
     | split row (char esep)
     | prepend [
         "/opt/homebrew/bin"
-        "/opt/homebrew/opt/gnu-sed/libexec/gnubin"
-        $env.PNPM_HOME
+        "/opt/homebrew/opt/llvm/bin"
+        $"($env.PNPM_HOME)/bin"
         $"($env.HOME)/bin"
         $"($env.ANDROID_HOME)/build-tools/37.0.0"
         $"($env.ANDROID_HOME)/platform-tools"
         $"($env.HOME)/.bun/bin"
         $"($env.HOME)/.platformio/penv/bin"
+        $"($env.HOME)/.platformio/packages/toolchain-xtensa-esp-elf/bin"
         $"(/opt/homebrew/bin/brew --prefix python | str trim)/libexec/bin"
         $"($env.HOME)/go/bin"
         $"($env.HOME)/.local/bin"
